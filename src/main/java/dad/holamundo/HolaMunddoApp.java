@@ -12,15 +12,17 @@ import javafx.stage.Stage;
 
 public class HolaMunddoApp extends Application {
 
-    private Label saludoLabel;
+    /*private Label saludoLabel;
     private Button saludarButton;
     private TextField nombreText;
-    private VBox rootPanel;
+    private VBox rootPanel;*/
+
+    private Controller controller;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        // Creamos el cuadro de texto
+       /* // Creamos el cuadro de texto
         nombreText = new TextField();
         nombreText.setPromptText("Introduce un nombre");
         nombreText.setMaxWidth(150);
@@ -38,10 +40,13 @@ public class HolaMunddoApp extends Application {
         rootPanel = new VBox();
         rootPanel.setSpacing(15);
         rootPanel.setAlignment(Pos.CENTER);
-        rootPanel.getChildren().addAll(nombreText, saludoLabel, saludarButton);
+        rootPanel.getChildren().addAll(nombreText, saludoLabel, saludarButton);*/
 
         // Añadimos la escena
-        Scene scene = new Scene(rootPanel,320,200);
+
+        controller = new Controller();
+
+        Scene scene = new Scene(controller.getView());
 
         primaryStage.setTitle("Hola Mundo Mejorado");
         primaryStage.setScene(scene);
